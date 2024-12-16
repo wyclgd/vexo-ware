@@ -21,4 +21,5 @@ This will remove **HttpGet** from game! You can use the modified version of dex 
 # Preview
 This is the UI of the version 1.10:
 ![preview_image](https://github.com/wyclgd/vexo-ware/blob/main/v.1.10-Preview.png?raw=true)
+  
 The current UNC is ~75%
