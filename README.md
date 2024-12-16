@@ -16,7 +16,7 @@ It uses the common method of writing unsigned bytecode into a Roblox core module
 
 The current method of adding **HttpGet** to "game" interferes with some scripts like [dex](https://raw.githubusercontent.com/infyiff/backup/main/dex.lua). To execute dex run this script:
   
-**` ```lua getgenv().game = workspace.Parent ``` `**
+- **` ```python ``` `**
   
 This will remove **HttpGet** from game! You can use the modified version of dex made for Vexo-Ware inside the released files
 
