@@ -19,6 +19,7 @@ The current method of adding **HttpGet** to "game" interferes with some scripts 
 ```lua
 # This is a lua code block
 print("Hello, world!")
+```
   
 This will remove **HttpGet** from game! You can use the modified version of dex made for Vexo-Ware inside the released files
 
