@@ -1,4 +1,6 @@
-<html><head><base href="." />
+<html>
+<head>
+<base href="." />
 <meta charset="utf-8">
 <title>Vexo-Ware</title>
 <style>
@@ -90,7 +92,7 @@ body {
   background: radial-gradient(circle at 50% 50%, rgba(123, 44, 191, 0.15), transparent 70%);
 }
 
-.particle {
+.particle, .snowflake {
   position: absolute;
   background: var(--primary-light);
   border-radius: 50%;
@@ -99,9 +101,18 @@ body {
   filter: blur(2px);
 }
 
+.snowflake {
+  background: var(--white);
+  opacity: 0.8;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
 @keyframes float {
   0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-100vh) rotate(360deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
 }
 
 .hero {
@@ -289,6 +300,14 @@ body {
         particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
         particle.style.animationDelay = (Math.random() * 20) + 's';
         particlesContainer.appendChild(particle);
+      }
+      for (let i = 0; i < 30; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.style.left = Math.random() * 100 + '%';
+        snowflake.style.animationDuration = (Math.random() * 15 + 5) + 's';
+        snowflake.style.animationDelay = (Math.random() * 15) + 's';
+        particlesContainer.appendChild(snowflake);
       }
     }
     createParticles();
