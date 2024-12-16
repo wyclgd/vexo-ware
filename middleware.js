@@ -1,19 +1,13 @@
-import { NextResponse } from 'next/server';
-
-export function middleware(request) {
-  const url = request.nextUrl.clone();
-
-  // If URL ends with .form, rewrite it to the root path without the extension
-  if (url.pathname.endsWith('.form')) {
-    url.pathname = url.pathname.replace('.form', '');
-    return NextResponse.rewrite(url);
-  }
-
-  // If URL ends with .html, rewrite it to the root path without the extension
-  if (url.pathname.endsWith('.html')) {
-    url.pathname = url.pathname.replace('.html', '');
-    return NextResponse.rewrite(url);
-  }
-
-  return NextResponse.next();
+import { next } from '@vercel/edge';
+export default function middleware(req) {
+  return next({
+    headers: {
+      'Referrer-Policy': 'origin-when-cross-origin',
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'X-DNS-Prefetch-Control': 'on',
+      'Strict-Transport-Security':
+        'max-age=31536000; includeSubDomains; preload',
+    },
+  });
 }
