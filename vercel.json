@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/download/windows.html",
+      "destination": "/download/windows",
+      "permanent": true
+    }
+  ]
+}
