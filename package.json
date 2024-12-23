@@ -3,4 +3,11 @@
   "dependencies": {
     "@vercel/edge": "^0.1.2"
   }
+
+  "rewrites": [
+    {
+      "source": "/download/windows",
+      "destination": "/download/windows.html"
+    }
+  ]
 }
