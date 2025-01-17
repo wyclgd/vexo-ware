@@ -81,35 +81,6 @@ body {
   padding-top: 60px;
 }
 
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  backdrop-filter: blur(10px);
-  background: radial-gradient(circle at 50% 50%, rgba(123, 44, 191, 0.15), transparent 70%);
-}
-
-.particle, .snowflake {
-  position: absolute;
-  background: var(--primary-light);
-  border-radius: 50%;
-  opacity: 0.2;
-  animation: float 20s infinite linear;
-  filter: blur(2px);
-}
-
-.snowflake {
-  background: var(--white);
-  opacity: 0.8;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  filter: blur(1px);
-}
-
 @keyframes float {
   0% { transform: translateY(0) rotate(0deg); }
   100% { transform: translateY(100vh) rotate(360deg); }
@@ -288,33 +259,5 @@ body {
     </div>
   </section>
 
-  <script>
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.width = Math.random() * 5 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-        particle.style.animationDelay = (Math.random() * 20) + 's';
-        particlesContainer.appendChild(particle);
-      }
-      for (let i = 0; i < 30; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.style.left = Math.random() * 100 + '%';
-        snowflake.style.animationDuration = (Math.random() * 15 + 5) + 's';
-        snowflake.style.animationDelay = (Math.random() * 15) + 's';
-        particlesContainer.appendChild(snowflake);
-      }
-    }
-    createParticles();
-
-    document.querySelectorAll('*').forEach((element, index) => {
-      element.style.animationDelay = (index * 0.1) + 's';
-    });
-  </script>
 </body>
 </html>
