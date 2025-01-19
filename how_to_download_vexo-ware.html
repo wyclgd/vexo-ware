@@ -1,18 +1,23 @@
 <html><head><base href="." target="_blank">
 <style>
 :root {
-  --primary: #19192D;
-  --accent: #8D1DDD;
-  --text: #ffffff;
+  --primary: #0f1729;
+  --accent: #6366f1;
+  --text: #e2e8f0;
+  --hover: #818cf8;
+  --section-bg: rgba(255, 255, 255, 0.05);
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px;
   background: var(--primary);
   color: var(--text);
   line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 25%);
 }
 
 .container {
@@ -20,37 +25,114 @@ body {
   margin: 0 auto;
 }
 
-.download-btn {
-  background: var(--accent);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.5rem;
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  background: linear-gradient(to right, var(--accent), var(--hover));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .section {
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--section-bg);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem;
+  transition: all 0.2s;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>Vexo-Ware</h1>
+  <div class="header">
+    <h1>Vexo-Ware</h1>
+  </div>
   <p>The best coding environment for Roblox.</p>
 
   <div class="section">
     <h2>Download</h2>
-    <a href="https://vexo-ware.vercel.app/download/windows" class="download-btn">Windows</a>
+    <a href="https://vexoware.com/download/windows" class="download-btn">Windows</a>
   </div>
 
   <div class="section">
-    <h2>How to Use For Dummies</h2>
+    <h2>How to Use</h2>
     <ol>
-      <li>Download and install Vexo-Ware from the main site.</li>
-      <li>Open the program.</li>
+      <li>Download and install Vexo-Ware.</li>
+      <li>Open the program</li>
       <li>Attach.</li>
       <li>Start coding</li>
     </ol>
@@ -59,7 +141,7 @@ body {
   <div class="section">
     <h2>Requirements</h2>
     <ul>
-      <li>Windows 10/11</li>
+      <li>Windows 10/11 (you are crazy if you use 11, not in a good way)</li>
       <li>Working computer (optional)</li>
       <li>Working script (required)</li>
     </ul>
